@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original launcher icon created for this project (Apache-2.0, see LICENSE). Contains no Google artwork. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Box body -->
+    <path
+        android:fillColor="#E8F5E9"
+        android:pathData="M32,48h44v30h-44z" />
+    <!-- Box lid -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M28,38h52v10h-52z" />
+    <!-- Handle slot -->
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M46,57h16v5h-16z" />
+</vector>

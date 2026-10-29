@@ -1,0 +1,176 @@
+Android Agent UI Verification Lab — Case Study 001
+Third-party and template-derived material
+
+This file lists material in this repository that is not the author's own work,
+or whose origin is not fully verified. It is informational. It does not change
+the terms of LICENSE (Apache-2.0, source code) or LICENSE-docs (CC BY 4.0,
+documentation and research artifacts). The Apache-2.0 license of this
+repository does not override any third-party license listed here. Where a
+file below is under its own terms, those terms apply to that file.
+
+Each statement is marked CONFIRMED (checked against an official source or the
+file itself) or INFERRED (a reasonable reading that was not confirmed).
+This is not legal advice.
+
+
+1. Original launcher icon files (14 files) — NOT redistributed
+-------------------------------------------------------------
+
+The original project (commit 0202cb3) contained the following 14 launcher icon
+files (paths relative to app/src/):
+
+  main/res/drawable/ic_launcher_background.xml
+  main/res/drawable/ic_launcher_foreground.xml
+  main/res/mipmap-anydpi/ic_launcher.xml
+  main/res/mipmap-anydpi/ic_launcher_round.xml
+  main/res/mipmap-hdpi/ic_launcher.webp
+  main/res/mipmap-hdpi/ic_launcher_round.webp
+  main/res/mipmap-mdpi/ic_launcher.webp
+  main/res/mipmap-mdpi/ic_launcher_round.webp
+  main/res/mipmap-xhdpi/ic_launcher.webp
+  main/res/mipmap-xhdpi/ic_launcher_round.webp
+  main/res/mipmap-xxhdpi/ic_launcher.webp
+  main/res/mipmap-xxhdpi/ic_launcher_round.webp
+  main/res/mipmap-xxxhdpi/ic_launcher.webp
+  main/res/mipmap-xxxhdpi/ic_launcher_round.webp
+
+THESE FILES ARE NOT IN THIS REPOSITORY. Their redistribution rights could not
+be verified, so they were left out:
+
+  - The two archival snapshots (experiments/test-a/ and experiments/test-b/)
+    omit all 14 files. Each snapshot's OMITTED_ASSETS.md records the original
+    file paths, byte sizes, SHA-256 checksums, Git blob IDs and the full source
+    commit hash (77fe81a9f4aaa069ba39898f1812a98f7806c919 for Test A,
+    1f95f80274552117509a047bd8f1981985df4be4 for Test B). The checksums
+    identify the files; they do not reproduce them. The snapshots are therefore
+    not byte-identical to the complete original commits.
+  - The runnable root app/ uses an ORIGINAL launcher icon created for this
+    project: a green square with a white and pale-green storage box, drawn as
+    plain vector shapes. It replaces the four XML files above, and the ten
+    .webp files were removed (minSdk is 26, so adaptive icons need no raster
+    fallbacks). It contains no Google artwork or trademarks and is covered by
+    the repository's Apache-2.0 license (LICENSE). Each of its four files
+    carries a comment saying so.
+  - The Kotlin code, the Gradle configuration and the archived benchmark
+    results are unchanged. The icons are not drawn by the Compose previews.
+
+Why the originals were removed. What was checked:
+
+CONFIRMED (from the files and official pages):
+  - The originals were present in the initial commit 0202cb3, before any
+    experiment, and none carried a license or copyright header.
+  - The xxxhdpi launcher image that was viewed showed the Android robot head
+    on a green grid (#3DDC84).
+  - Google's brand guidelines
+    (https://developer.android.com/distribute/marketing-tools/brand-guidelines)
+    say the green Android robot may be reproduced or modified with this
+    attribution, and link CC BY 3.0:
+
+      "The Android robot is reproduced or modified from work created and
+      shared by Google and used according to terms described in the Creative
+      Commons 3.0 Attribution License."
+
+  - Google's Legal Notice (https://developer.android.com/legal) says the robot
+    "can be used, reproduced, and modified freely in marketing communications"
+    and is licensed under Creative Commons Attribution, but it links version
+    2.5. The two official pages therefore disagree on the version, and
+    neither says whether the robot may be shipped inside an app's source
+    repository.
+  - Android Studio's terms (https://developer.android.com/studio/terms) say
+    nothing about ownership of, or a license to, templates or generated
+    assets, and restrict redistribution of SDK parts except under the terms of
+    open-source components (sections 3.4 and 3.5). developer.android.com's
+    create-app-icons page says nothing about the terms of the default icon.
+
+INFERRED (not confirmed):
+  - That the originals are the default launcher icon of an Android Studio
+    "new project" template. The .idea files in commit 0202cb3 show the project
+    was opened in Android Studio, but the generating tool is not recorded, and
+    no official source was found to match these files byte for byte.
+  - That the other density variants and the vector files show the same
+    artwork. Only the xxxhdpi image was viewed.
+
+Trademark rights (separate from copyright licensing):
+  Google keeps its trademark rights in the Android robot logo and in the
+  Android name. The brand guidelines state that you may not file trademark
+  applications for, or claim trademark rights to, the Android robot or its
+  derivatives. The Legal Notice also bars use of the Android logo and its
+  typeface, and developer.android.com/license says Google trademarks,
+  including the stylized Android logo, are not covered by the Apache 2.0 or
+  Creative Commons licenses it describes. A copyright license for artwork does
+  not grant any trademark right, and nothing in this repository suggests
+  endorsement by Google. The replacement icon is not a derivative of the robot.
+
+
+2. Other template boilerplate files (12 files) — provenance not verified
+-----------------------------------------------------------------------
+
+The following 12 files were also in commit 0202cb3 and have the layout and
+content of a standard Android Compose project template (paths relative to
+app/src/):
+
+  main/AndroidManifest.xml
+  main/java/com/perimamoglu/homestockbenchmark/ui/theme/Color.kt
+  main/java/com/perimamoglu/homestockbenchmark/ui/theme/Theme.kt
+  main/java/com/perimamoglu/homestockbenchmark/ui/theme/Type.kt
+  main/keepRules/rules.keep
+  main/res/values/colors.xml
+  main/res/values/strings.xml
+  main/res/values/themes.xml
+  main/res/xml/backup_rules.xml
+  main/res/xml/data_extraction_rules.xml
+  androidTest/java/com/perimamoglu/homestockbenchmark/ExampleInstrumentedTest.kt
+  test/java/com/perimamoglu/homestockbenchmark/ExampleUnitTest.kt
+
+The individual licensing provenance of these 12 files has NOT been verified.
+  - No file carries a license header.
+  - No official statement was found that licenses the output of Android
+    Studio's project templates. Google's site-wide terms
+    (https://developer.android.com/license) say that documentation, and code
+    shown in it, and sample source code in the SDK are under Apache 2.0.
+    They say nothing about generated project files, so this is not a
+    confirmation for these files.
+  - Several files are minimal or comment-only (rules.keep contains only
+    comments; the backup and data-extraction rules are comment-and-stub
+    files with links to developer.android.com; colors.xml and Color.kt hold
+    colour constants). That makes them low risk in practice, but it is not a
+    licensing finding.
+  - These 12 files are kept unchanged from the baseline commit, so that the
+    files the archival snapshots retain match their commits. The repository's
+    Apache-2.0 notice covers them only to the extent the author is entitled to
+    license them.
+
+The same caveat applies to the Gradle build configuration that was also in
+commit 0202cb3: build.gradle.kts, app/build.gradle.kts, settings.gradle.kts,
+gradle.properties, gradle/libs.versions.toml, gradle/gradle-daemon-jvm.properties
+and the .gitignore files. They look generated by the project template; their
+individual licensing provenance has not been verified, and they are not claimed
+as the author's own work.
+
+Two further files in app/src/main/java/.../ are not template material:
+InventoryScreen.kt and MainActivity.kt were written by an AI agent (Claude
+Sonnet 5.5) under the author's direction and are covered by the repository's
+Apache-2.0 license as a statement of the author's intent. Copyright in
+AI-generated code is unsettled in some jurisdictions.
+
+
+3. Gradle wrapper
+-----------------
+
+gradlew, gradlew.bat and gradle/wrapper/gradle-wrapper.jar come from Gradle
+and are not the author's work.
+CONFIRMED: gradlew and gradlew.bat are headed with Apache-2.0 notices (2015,
+"the original authors"), and the JAR manifest declares
+SPDX-License-Identifier: Apache-2.0. The JAR is Gradle 9.6.0's official
+wrapper JAR (SHA-256
+497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7), matching
+the checksum published at
+https://services.gradle.org/distributions/gradle-9.6.0-wrapper.jar.sha256
+
+
+4. Dependencies
+---------------
+
+The project's dependencies (AndroidX, Compose, Material 3 and others) are
+declared in gradle/libs.versions.toml and fetched at build time. They are not
+redistributed in this repository and keep their own licenses.

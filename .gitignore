@@ -1,0 +1,26 @@
+# Android / Gradle
+*.iml
+.gradle/
+.kotlin/
+**/build/
+local.properties
+.externalNativeBuild/
+.cxx/
+captures/
+
+# Android Studio / IntelliJ
+.idea/
+
+# macOS
+.DS_Store
+
+# Local environment and secrets
+.env
+.env.*
+*.keystore
+*.jks
+*.p12
+
+# Temporary benchmark output
+preview_output_*/
+*.hprof
